@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tranny.eu.cc</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            background: #110022;
+            background-image: linear-gradient(45deg, #ff0080 0%, #7a00ff 50%, #00aaff 100%);
+            background-size: 300% 300%;
+            animation: clinical 8s ease infinite;
+            overflow: hidden;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        @keyframes clinical {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.02) 10px, rgba(255,255,255,0.02) 20px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .card {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            border: 4px solid #ff66aa;
+            box-shadow: 0 0 80px rgba(255, 0, 128, 0.4);
+            padding: 3rem 2.5rem;
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            color: white;
+        }
+
+        .card h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            line-height: 1.1;
+            color: #ff66aa;
+            text-shadow: 0 0 30px #ff0080, 0 0 60px #ff0080;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h1 .subtitle {
+            display: block;
+            font-size: 1.1rem;
+            color: #a0f0ff;
+            text-shadow: 0 0 20px #00aaff;
+            letter-spacing: 2px;
+        }
+
+        /* Ссылка на Telegram – самое видное место */
+        .telegram-link {
+            display: inline-block;
+            margin: 1rem 0 1.5rem;
+            padding: 0.8rem 2rem;
+            background: rgba(255, 102, 170, 0.25);
+            border: 3px solid #ff66aa;
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 0 40px rgba(255, 0, 128, 0.5);
+            transition: all 0.3s;
+        }
+        .telegram-link:hover {
+            background: #ff66aa;
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 0 80px #ff0080;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: #cc88ff;
+            border-top: 2px solid #ff66aa;
+            border-bottom: 2px solid #ff66aa;
+            padding: 0.7rem 0;
+            margin: 1rem 0;
+        }
+
+        .tagline span {
+            color: #ff66aa;
+        }
+
+        .price-list {
+            background: rgba(255, 102, 170, 0.1);
+            border: 2px solid #ff66aa;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.9rem;
+        }
+
+        .price-list .item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.2);
+            padding: 0.5rem 0;
+        }
+
+        .price-list .item:last-child {
+            border-bottom: none;
+        }
+
+        .price-list .item .price {
+            color: #ff66aa;
+            font-weight: bold;
+        }
+
+        .feedback {
+            font-size: 0.85rem;
+            color: #cccccc;
+            border-left: 6px solid #ff66aa;
+            padding: 0.8rem 1.2rem;
+            margin: 1.2rem 0;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            text-transform: none;
+            letter-spacing: 0;
+            background: rgba(0,0,0,0.4);
+            font-style: italic;
+        }
+
+        .feedback .name {
+            color: #ff66aa;
+            text-transform: uppercase;
+            font-style: normal;
+        }
+
+        button {
+            background: transparent;
+            border: 3px solid #ff66aa;
+            color: #ff66aa;
+            padding: 1rem 3rem;
+            font-size: 1.3rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            width: 100%;
+            margin: 1rem 0 0;
+            box-shadow: 0 0 30px rgba(255,0,128,0.2);
+            position: relative;
+            z-index: 5;
+        }
+
+        button:hover {
+            background: #ff66aa;
+            color: black;
+            box-shadow: 0 0 60px #ff0080;
+            transform: scale(1.02);
+        }
+
+        .footer {
+            margin-top: 1.8rem;
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.25);
+            letter-spacing: 2px;
+            border-top: 1px solid rgba(255,102,170,0.3);
+            padding-top: 1rem;
+            line-height: 1.8;
+        }
+
+        .disclaimer {
+            font-size: 0.7rem;
+            color: #ff6666;
+            text-shadow: 0 0 10px #ff0000;
+            margin-top: 1.2rem;
+        }
+
+        /* Шприц */
+        .syringe-container {
+            position: fixed;
+            left: 50%;
+            top: -200px;
+            transform: translateX(-50%);
+            z-index: 100;
+            pointer-events: none;
+            width: 60px;
+            height: auto;
+            transition: none;
+        }
+
+        .syringe-container svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -200px;
+                transform: translateX(-50%) rotate(10deg);
+                opacity: 0;
+            }
+            30% {
+                top: 30%;
+                opacity: 1;
+            }
+            50% {
+                top: 35%;
+                transform: translateX(-50%) rotate(-3deg);
+            }
+            70% {
+                top: 32%;
+                transform: translateX(-50%) rotate(2deg);
+            }
+            100% {
+                top: 30%;
+                transform: translateX(-50%) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes inject {
+            0% { transform: translateX(-50%) scale(1); }
+            20% { transform: translateX(-50%) scale(0.98); }
+            50% { transform: translateX(-50%) scale(1); }
+            80% { transform: translateX(-50%) scale(0.97); }
+            100% { transform: translateX(-50%) scale(0.95); }
+        }
+
+        .syringe-container.fall {
+            animation: fall 1.2s ease forwards;
+        }
+
+        .syringe-container.inject {
+            animation: inject 1.5s ease forwards;
+        }
+
+        .drop {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: #ff66aa;
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 20px #ff0080;
+        }
+
+        .syringe-container.inject .drop {
+            animation: drip 1.5s ease forwards;
+        }
+
+        @keyframes drip {
+            0% {
+                opacity: 1;
+                bottom: -20px;
+                height: 12px;
+            }
+            40% {
+                opacity: 1;
+                bottom: -40px;
+                height: 20px;
+            }
+            100% {
+                opacity: 0;
+                bottom: -80px;
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card { padding: 2rem 1.5rem; }
+            .card h1 { font-size: 2rem; }
+            .telegram-link { font-size: 1.2rem; padding: 0.6rem 1.2rem; }
+            .syringe-container { width: 40px; }
+            .price-list .item { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>
+        TRANNY.EU.CC
+        <span class="subtitle">ГЛАВНАЯ ТРАНСШЛЮХА СЕТИ</span>
+    </h1>
+
+    <!-- Самое видное место – ссылка на Telegram -->
+    <a href="https://t.me/meeowzuki" target="_blank" rel="noopener noreferrer" class="telegram-link">
+        ✨ @meeowzuki ✨
+    </a>
+
+    <div class="tagline">
+        ТВОЯ МАМКА НЕ ВКОЛЕТ ТЕБЕ СТОЛЬКО ЭСТРОГЕНА, СКОЛЬКО Я 💉
+    </div>
+
+    <div class="price-list">
+        <div class="item">
+            <span>Базовый укол (100 мг)</span>
+            <span class="price">$50</span>
+        </div>
+        <div class="item">
+            <span>Двойная доза (200 мг) + синяк в подарок</span>
+            <span class="price">$90</span>
+        </div>
+        <div class="item">
+            <span>Инъекция прямо в сраку (хайп)</span>
+            <span class="price">$150</span>
+        </div>
+        <div class="item">
+            <span>Полное перепрограммирование (личное присутствие)</span>
+            <span class="price">$500</span>
+        </div>
+    </div>
+
+    <div class="feedback">
+        ⭐⭐⭐⭐⭐ «После её укола я перестал быть мужиком. Теперь у меня сиськи и кредитка мужа. Спасибо, шлюха!» — <span class="name">Дима (теперь Диана)</span>
+    </div>
+
+    <div class="feedback">
+        ⭐⭐⭐⭐⭐ «Пришла за эстрогеном, ушла с мыслью, что я тоже хочу быть трансшлюхой. 10/10» — <span class="name">Аноним</span>
+    </div>
+
+    <button onclick="injectEstrogen()">
+        👉 ВВЕСТИ ЭСТРОГЕН 👈
+    </button>
+
+    <div class="disclaimer">
+        * ПОБОЧКИ: ОРГАЗМ ОТ СОБСТВЕННОГО ОТРАЖЕНИЯ, ЖЕЛАНИЕ СНИМАТЬ ТИК-ТОКИ, ХРОНИЧЕСКАЯ КРАСОТА
+    </div>
+
+    <div class="footer">
+        ⚡ ОФИЦИАЛЬНАЯ ТРАНСШЛЮХА · ПРИЕМ В ЛИЧКЕ · ОПЛАТА НАЛИЧКОЙ ИЛИ СИСЬКАМИ
+    </div>
+</div>
+
+<div class="syringe-container" id="syringe">
+    <svg viewBox="0 0 100 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="25" y="60" width="50" height="140" rx="5" fill="#e0e0e0" stroke="#666" stroke-width="2"/>
+        <line x1="30" y1="70" x2="30" y2="190" stroke="#ccc" stroke-width="1"/>
+        <line x1="70" y1="70" x2="70" y2="190" stroke="#ccc" stroke-width="1"/>
+        <rect x="30" y="20" width="40" height="40" rx="3" fill="#ccc" stroke="#666" stroke-width="2"/>
+        <rect x="42" y="55" width="16" height="10" fill="#aaa"/>
+        <rect x="28" y="60" width="44" height="8" fill="#444" rx="2"/>
+        <rect x="30" y="68" width="40" height="120" fill="#ff66aa" opacity="0.6" rx="2" id="liquid"/>
+        <polygon points="42,200 58,200 50,270" fill="#ccc" stroke="#666" stroke-width="2"/>
+        <circle cx="50" cy="275" r="3" fill="#ff66aa" opacity="0.8" class="drop"/>
+        <rect x="35" y="80" width="8" height="80" fill="white" opacity="0.15" rx="2"/>
+    </svg>
+</div>
+
+<script>
+    function injectEstrogen() {
+        const syringe = document.getElementById('syringe');
+        syringe.classList.remove('fall', 'inject');
+        void syringe.offsetWidth;
+        syringe.classList.add('fall');
+        setTimeout(() => {
+            syringe.classList.remove('fall');
+            syringe.classList.add('inject');
+        }, 1200);
+        setTimeout(() => {
+            alert('💉 ДОЗА ВВЕДЕНА. ТЕПЕРЬ ТЫ ТОЖЕ ШЛЮХА (НО КРАСИВАЯ).');
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
